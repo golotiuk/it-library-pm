@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')
+	</script>
+	<title>Knowledge_base</title>
+	<link rel="stylesheet" type="text/css" href="css.css">
+	<script type="text/javascript">  
+		setInterval(function () {  
+		date = new Date(),  
+		h = date.getHours(),  
+		m = date.getMinutes(),  
+		s = date.getSeconds(),  
+		h = (h < 10) ? '0' + h : h,  
+		m = (m < 10) ? '0' + m : m,  
+		s = (s < 10) ? '0' + s : s,  
+		document.getElementById('time').innerHTML = h + ':' + m + ':' + s;  
+	}, 1000);
+	</script>
+</head>
+<body>
+	<div class="header">
+		<a class="logo" href="index.html">
+			<img src="logo.png">
+		</a>
+		<p class="search">
+			<input class="search-field" type="search" name="q" placeholder="Поиск по сайту"> 
+   			<input class="search-button" type="submit" value="Найти">
+   		</p>
+		<span class="clock" id="time">00:00:00</span>
+	</div>
+	<div class="telo">
+		<div class="list-instruktions">
+			
+		</div>
+		<iframe src="https://drive.google.com/file/d/1Nndwqh4wWySuRFJ95Zw7v0NkB8kAPkM6/preview" width=80% height="1150px"></iframe>
+	</div>
+	<div class="footer">
+		<p>Наши контакты:</p>
+		<p>tel: +380503880493</p>
+		<p>skype: PM Admin UA</p>
+		<p>e-mail: <a href="mailto:helpdesk@pm.ua">helpdesk@pm.ua</a></p>
+	</div>
+</body>
+</html>
