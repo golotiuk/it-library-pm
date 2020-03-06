@@ -1,0 +1,415 @@
+/* 0. fonts
+     ================================================ */
+
+
+/* 1. base
+     ================================================ */
+
+$g-color: #011407
+$success: #3dcf7e
+$default: #eee
+$danger: #f5694e
+$info: #25aae2
+$info-dark: #0f75bd
+
+
+html
+	font-size: 100%
+	overflow-y: scroll
+	-webkit-text-size-adjust: 100%
+	-ms-text-size-modal-wrap: 100%
+
+body
+	font: normal 14px/1 'Montserrat', Arial, Helvetica, sans-serif
+	color: $g-color
+	background-color: #f2f2f2
+	+font-smoothing
+	
+a
+	color: $g-color
+	text-decoration: none
+	&:hover 
+		text-decoration: none
+		color: $success
+.fl 
+	float: left
+.fr
+	float: right
+
+.text-center
+	text-align: center !important
+.text-left
+	text-align: left !important
+.text-right 
+	text-align: right !important
+.text-success
+	color: $success
+
+/* 2. icons
+     ================================================ */
+.ic
+	position: relative
+	display: inline-block
+	vertical-align: middle
+@each $i in alerts, calendar, setting, tw, fb
+	.ic--#{$i}
+		+s(ic--#{$i})
+	
+/* 3. buttons
+     ================================================ */
+.btn, a.btn
+	display: inline-block
+	vertical-align: middle
+	padding: 14px
+	font-size: 14px
+	font-weight: 700
+	line-height: 14px
+	text-decoration: none
+	color: #fff
+	border: none
+	+br(4px)
+	&--success
+		background: $success
+		&:hover
+			background-color: darken($success, 7%)
+	&--info
+		background-color: $info
+		&:hover
+			background-color: darken($info, 7%)
+	&--info-dark
+		background-color: $info-dark
+		&:hover
+			background-color: darken($info-dark, 7%)
+	&--block
+		display: block
+		width: 100%
+		text-align: center
+
+/* 4. forms
+     ================================================ */
+input[type='text'], 
+input[type='number'], 
+input[type='email'], 
+input[type='tel'], 
+input[type='search'], 
+input[type='url'], 
+input[type='file'], 
+input[type='password'], 
+textarea
+	height: 40px
+	margin-bottom: 15px
+	padding: 0 10px
+	background: #fff
+	border: 2px solid #eee
+	+br(4px)
+	color: #8c9c93
+	font-size: 14px
+	+placeholder
+		color: #8c9c93
+		font-size: 14px
+	+placeholder-color(#8c9c93)
+	&.input__ic
+		display: block
+		width: 100%
+		background-repeat: no-repeat
+		background-position: 15px center
+		padding-left: 40px
+		&--user
+			background-position: 17px
+			background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAATCAYAAACk9eypAAABL0lEQVQ4T5WTTVKDQBCFX4NZ6w0Sb5DZWSVUJTfAE0hOYNwLEuI+yQnEG3ADUwXrTG4gR0jWEdoaBCoYKHB2M/2+fv1TQ/jnoXP9RHo3KdIVQNbvO4c69Oet8A6lrgKU+BvZJwHj8yQM7K+gTUuoAu6lM9dAq+YKeRaJZaBiFWBI1yPgtQlgYBEL36sBpnRsgN6bHbKHSLyFNUBdTOkq28c/0EckfPui6fKhcJoUU9qWtbcCXWup7aGY1BOAUQEmDKxj4W8uHFrqL3QcRGI5q5o2pLsmQGVuPQxsYuHP6U56owGyr67aVfwE7Zb6ZC+TKRcydk5CRMM+DgASMqXLPcW5jMydcwDRdS+I+UimfLHAFHRCzEcmtvLFqb9wQmoTYBFjXMG5CHsGwgH0QP2JH624bgW/r+c1AAAAAElFTkSuQmCC')
+		&--pass
+			background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAABSElEQVQ4T81TwU3DQBCctcObdAAdJMeLRyySCqADTAWkAZvDbsAdkHRAKsAoRuKVSzowHfgP9qKzseU4F8lCQuJe1s3u7NzsmGA4jvJcBt0TMNYwA1sGojcRLLvl1L6YKjn8QvFSN3aLNdEA1iwWMquxPYLJxtsS0egHXALFc/Vt3QC4rdRwnIhwdkCgZQP0VAF8txbhoq3gGN4ocJSvp10z8y65CMu3d09L4XItAlfjDcFEeTGBrhh4TEQgjQTKlwQ8MPg1EeG0JNDG5ZyPmCiqzOMFGHvyGzKCfqarzSTmuU32jpyNl4Ho1DSxx11KjvK5R+HRkj8lWDGKqBpNUhtskmFUwMwfA7LHdeLKhHKuQ3Z2EGWTB+011Q31mnsRAMg+YYl3IVPdcKnk+QkKBWDYl0DXpYwqDwTMTc0l9i/WWP5EvwzT6hsHOZEm3EbmgAAAAABJRU5ErkJggg==')
+		&--mail
+			background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAMCAYAAABr5z2BAAAAuElEQVQ4T6VSyw2CQBB9j9iHdGC4eVhqkA6gECHEWMjaAdTAxROLHWAfhjFjgBhCjGH3Npt5n3kzNG3ekTxgwxOgY+wK2YCdITRt3pPcbyERkScVGLtzAgQZgNOfRDUw2Ca6VjSuKF8I7D0q+6Mrwx2GDCLZ0pWqgbSL3nTOQCAVQdtEl3rhCpPa9C9gSjDRei3EXgBVuqkrbRqdpQR0zPB7zJ9bUFcflVFtLR//NXrfgTeB1ymLPN4SelzqzCIY+QAAAABJRU5ErkJggg==')
+	&:focus
+		outline: none
+		box-shadow: none
+		border-color: $success
+
+textarea 
+	height: auto
+	resize: none
+	min-height: 100px
+
+label
+	display: block
+	line-height: 22px
+	a
+		color: $success
+		&:hover
+			text-decoration: underline
+input[type="checkbox"]
+	+check(14px, 14px, sprite-checkbox)
+.checkbox
+	&--left
+		label
+			position: relative
+			display: block
+			padding-left: 20px
+			letter-spacing: -0.3px
+			&:before
+				position: absolute !important
+				left: 0
+/* 5. header
+     ================================================ */
+.clr 
+	+clr
+
+.wrapper
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+	max-width: 970px
+	padding: 0 15px
+	margin: 100px auto 
+
+.box 
+	padding: 20px
+	margin-bottom: 30px
+	background-color: white
+	+br(4px) 
+	+bs( 0 1px 1px rgba(223, 223, 223, 0.75))
+	&--lg 
+		padding: 20px 40px
+		.nav  
+			padding: 22px 0
+	&--br
+		padding-top: 60px
+		padding-bottom: 60px
+		border-top: 4px solid $success
+	&__title
+		margin-top: 0
+		margin-bottom: 40px
+		font-size: 18px
+		font-weight: 700
+		text-transform: uppercase
+		text-align: center
+
+.nav
+	float: left
+	margin: 0
+	padding: 0
+	list-style-type: none
+	li
+		display: inline-block
+		& + li
+			margin-left: 16px
+		a
+			font-weight: 700
+			text-transform: uppercase
+			&:hover
+				color: $success
+
+
+.status 
+	padding: 14px 0
+	float: right
+	.offline, .online
+		position: relative
+		display: inline-block
+		width: 30px
+		height: 30px
+		border: 2px solid $success 
+		+br(50%)
+		cursor: pointer
+		&.active:after 
+			content: ''
+			display: block
+			position: absolute
+			top: 3px 
+			left: 3px
+			right: 3px
+			bottom: 3px
+			background: $success 
+			+br(50%)
+	.offline
+		border-color: $danger
+		&.active::after 
+			background: $danger
+
+
+.profile
+	float: left
+	&__img
+		position: relative
+		float: left
+		img
+			display: block
+			width: 60px
+			height: 60px
+			border: 5px solid #f2f2f2
+			background-color: #f2f2f2
+			+br(50%)
+	&__info
+		margin-left: 67px
+		padding-top: 13px
+		span
+			color: #4e5f55
+			display: block
+	&__name
+		margin: 5px 0 0 0
+		color: $success
+		font-size: 18px
+		font-weight: 700
+		a
+			color: inherit
+
+
+.nav-icon
+	float: right
+	padding: 20px 0
+	&__item
+		position: relative
+		display: inline-block
+		margin-left: 16px
+		kbd
+			position:  absolute
+			top: -10px
+			right: -8px
+			height: 18px
+			line-height: 18px
+			padding: 0 6px
+			color: #fff
+			font-size: 12px
+			font-weight: 700
+			+br(8px)
+			background-color: $success
+			display: inline-block
+			z-index: 1
+		&--calendar
+			kbd
+				right: -16px
+
+
+.navbar
+	padding-top: 13px
+	padding-bottom: 13px
+	.devider
+		position: relative
+		&:after
+			content: ''
+			display: block
+			position: absolute
+			right: -34px
+			top: -3px
+			width: 2px
+			height: 40px
+			background-color: #eee
+	.profile
+		&__img
+			img
+				width: 19px
+				height: 19px
+				border: none
+		&__info
+			margin-left: 26px
+			padding-top: 1px
+		&__name
+			margin: 0
+	&-form
+		float: right
+		margin-right: 10px
+		position: relative
+		width: 191px
+		input[type="text"]
+			height: 34px
+			width: 100%
+			font-style: italic
+			display: block
+			margin-bottom: 0
+		.form-button
+			display: block
+			position: absolute
+			top: 10px
+			right: 10px
+			width: 17px
+			height: 16px
+			border: none
+			outline: none
+			background: transparent url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAQCAYAAADwMZRfAAABXUlEQVQ4T6WTQU4CQRBFf/X0Xo4wN5AbiDfgBjAR3BiQieBW1oKBMHEjGOEGeALgBI4nkCNwgJ4uUwLGMD2Mxt52/1f1q34TjpzeOCoRcQVAGaACwBsAc2aadeqN5V5KWYz+JJoCEEhXqWQeBuFm8DIoWOuVmakL8KJdawaid0IEwMy+1klZxIeFBGaMNyfCh4BSkK0FTD3PFF2APVBASaJjZlRTEOmCiJc3F02xc/Q8PI+qzFRyQdaeZ0phEK7zIFtbeu2CcLvWyBz4Ibg/ifi/nfjG6Ng5E2aOO/XmMM9O5kxkOxIorY2fvx3vjZnSK5bqvfFoCdCJ1uY8Oyd6QYRVu9ZoOe0AqDDzK0CSmTtr1er28iq+f3osKmXPAO4CNBNAKrG7qFeIOJCc7ETysAjgFMA7gNhaNRRo6u8cAvKG+vP+y05/Eskmrvcd/AXwbac3jjZKces3UXcV+ARY8rvFwaz7bAAAAABJRU5ErkJggg==')
+	.nav-icon, .profile
+		padding: 7px 0
+	.nav
+		padding: 10px 0
+
+.login
+	font-size: 14px
+	&__btn
+		width: 150px
+		margin-right: 15px
+	.social
+		float: right
+	&__footer
+		+justify
+		a
+			display: inline-block
+			text-align: left
+			font-size: 14px
+			line-height: 14px
+			font-weight: 700
+			color: #011407
+			&:hover 
+				text-decoration: none
+				color: $success
+
+
+.or
+	display: inline-block
+	vertical-align: middle
+	color: #8c9c93
+	font: italic 14px Arial, sans-serif
+	text-transform: uppercase
+
+.social
+	.btn
+		width: 42px
+		text-align: center
+
+.line
+	margin: 40px 0
+	clear: both
+	height: 2px
+	background-color: #eee
+
+
+.progress
+	margin-top: 15px
+	margin-bottom: 35px
+	&__count
+		float: right
+	&__wrap, &__wrap-big
+		margin-top: 8px
+		height: 8px
+		+br(4px)
+		background-color: #eee
+		&>div
+			height: 8px
+			+br(4px)
+			background-color: $success
+	&__wrap-big
+		height: 22px
+		&>div
+			height: 22px
+.progress-skills
+	margin-top: 15px
+	margin-bottom: 0
+	.progress__title
+		font-weight: 700
+		color: #8c9c93
+.rezume
+	.profile
+		
+		float: none
+		font-size: 24px
+
+
+/* 6. content
+     ================================================ */
+
+
+/* 7. footer
+     ================================================ */
+
+
+/* 8. media
+     ================================================ */
